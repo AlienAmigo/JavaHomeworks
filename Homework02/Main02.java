@@ -58,15 +58,31 @@ public class Main02 {
     // private static File log;
     // private static FileWriter fileWriter;
 
-    public int[] realsort(int[] mas) {
-      int[] rez = new int[mas.length];
+    public static int[] realsort(int[] mas) {
+      for (int i = 0; i < mas.length; i++) {
+       mas[i] = mas[i];
+      }
 
-      return rez;
+      for (int i = 0; i < mas.length - 1; i++) {
+        for (int j = 1; j < mas.length - i; j++) {
+          if (mas[j] < mas[j - 1]) {
+            System.out.println(j + mas[j]);
+            int temp = mas[j];
+            mas[j] = mas[j - 1];
+            mas[j - 1] = temp;
+            System.out.println(j + Arrays.toString(mas));
+          }
+        }
+      }
+
+
+      return mas;
     }
 
     public static void sort(int[] mas) {
+      ;
 
-      System.out.println(Arrays.toString(mas));
+      System.out.println(Arrays.toString(BubbleSort.realsort(mas)));
     }
   }
 
